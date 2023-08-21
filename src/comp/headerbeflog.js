@@ -17,7 +17,7 @@ const Headerbeflog = () => {
               </a>
             </li>
             <li className="main-list">
-              <a className="main-link" href="#">
+              <a className="main-link" href="/about">
                 About us
               </a>
             </li>
