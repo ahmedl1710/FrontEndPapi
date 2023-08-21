@@ -1,0 +1,352 @@
+/* =============
+ table of contents
+===============
+
+0. global styles
+1. ul class .flex
+      1.1 sub HTML + css + JavaScript
+      1.2 sub sub of CSS
+
+
+2. main & footer
+3. header of mobile
+ 
+*/
+
+/* ===============
+   0. global style
+================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+
+  font-family: 'Popins',sans-serif;
+
+  text-decoration: none;
+  list-style: none;
+
+  letter-spacing: 1px;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header {
+  background-color: #1b1b1b;
+}
+
+h1 {
+  padding: 10px;
+  font-size: 25px;
+}
+
+/* ===============
+   1.  ul class .flex
+================ */
+
+.hide-when-mobile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+}
+
+.main-list {
+  padding: 20px;
+  font-size: 19px;
+  position: relative;
+}
+
+.main-link {
+  padding: 8px 15px;
+}
+
+.main-link:hover {
+  color: cyan;
+  box-shadow: 0 0 5px cyan;
+  border-radius: 5px;
+}
+
+/* =======================================
+   1.1 sub HTML + css + JavaScript
+======================================== */
+
+.sub-ul {
+  display: none;
+
+  position: absolute;
+  top: 69px;
+  left: -15px;
+  border-top: 1px solid cyan;
+
+  background-color: #1b1b1b;
+
+  border-radius: 5px;
+  padding: 5px;
+
+  width: 155px;
+}
+
+.sub-of-js {
+  left: 10px;
+}
+
+.sub-ul li {
+  padding: 8px 0;
+  font-size: 17px;
+  border-bottom: 1px solid black;
+}
+
+.sub-ul li a:hover {
+  color: cyan;
+  font-weight: bold;
+}
+
+.main-list:hover .sub-ul {
+  display: block;
+}
+
+/* =======================================
+   1.2 sub sub of CSS
+======================================== */
+
+.sub-sub-ul {
+  position: absolute;
+  top: 80px;
+  left: 153px;
+
+  border-top: 1px solid cyan;
+
+  background-color: #1b1b1b;
+
+  border-radius: 5px;
+  padding: 5px;
+
+  width: 150px;
+
+  display: none;
+}
+
+.mini-projects:hover .sub-sub-ul {
+  display: block;
+}
+
+
+/* ==================
+    2. main & footer
+===================== */
+main{
+  color: #1b1b1b;
+
+  height: calc(100vh - 128.64px);
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  text-align: center;
+}
+
+footer{
+  background-color: #1b1b1b;
+
+  padding: 20px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ==================
+    3. header of mobile
+===================== */
+.show-when-mobile {
+  display: none;
+}
+
+@font-face {
+  font-family: FetteGotisch;
+  src: url(DSFetteGotisch.ttf)format(truetype);
+}
+.myfont{
+  font-family:FetteGotisch;
+  font-size: 40px;
+}
+.myfonte{
+  font-family:FetteGotisch;
+  font-size: 40px;
+
+}
+.myfonte:hover {
+  color: cyan;
+  box-shadow: 0 0 5px cyan;
+  border-radius: 5px;
+}
+.bud{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1b1b1b;
+  
+}
+.box
+{
+position: relative;
+width: 380px;
+height: 420px;
+background: #1c1c1c;
+border-radius: 8px;
+overflow: hidden;
+}
+.box::before
+{
+  content: '';
+  position : absolute;
+  top:-50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+.box::after
+{
+  content: '';
+  position : absolute;
+  top:-50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes animate{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg)
+  }
+}
+.box form
+{
+  position: absolute;
+  inset:4px;
+  background:#222;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+.box form h2{
+  color: #ffffff;
+font-weight: 500;
+text-align: center;
+letter-spacing: 0.1em;
+}
+.box form .inputBox{
+  position:relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.box form .inputBox input{
+  position:relative;
+  width: 100%;
+  padding:20px 10px 10px;
+  background: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition:0.5s;
+  z-index: 8;
+}
+.box form .inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  pointer-events: none;
+  color: #8f8f8f;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  transition: 0.5s;
+}
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span
+{
+  color: #45f3ff;
+  font-size: 0.75em;
+  transform: translateY(-34px);
+}
+.box form .inputBox i{
+  position:absolute;
+  left:0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #45f3ff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i
+{
+  height: 44px;
+}
+.box form .links
+{
+  display: flex;
+  justify-content: space-between;
+  color: #8f8f8f;
+  text-decoration: none;
+}
+.box form .links a:hover,
+.box form .links a:nth-child(1),
+.box form .links a:nth-child(2)
+{
+  color: #45f3ff;
+}
+.box form input[type="submit"]
+{
+  border: none;
+  outline: none;
+  padding: 9px 25px;
+  background: #45f3ff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100px;
+  margin-top: 10px;
+}
+.box form input[type="submit"]:active{
+  opacity: 0.8;
+}
