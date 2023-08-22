@@ -21,7 +21,7 @@ const Login = () => {
             </div>
             <div className="links">
               <a href="#">Forget Password</a>
-              <a href="#">Signup</a>
+              <a href="/signup">Signup</a>
             </div>
             <input className="myfont" type="submit" value="login" />
           </form>

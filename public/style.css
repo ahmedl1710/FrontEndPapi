@@ -355,3 +355,146 @@ letter-spacing: 0.1em;
 .box form input[type="submit"]:active{
   opacity: 0.8;
 }
+
+.box2 {
+  position: relative;
+  width: 380px;
+  height: 700px; /* Adjust height as needed */
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 30px; /* Adjust padding as needed */
+  box-sizing: border-box;
+}
+
+.box2::before,
+.box2::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 700px; /* Adjust height as needed */
+  background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box2::after {
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.box2 form {
+  position: absolute;
+  inset: 6px;
+  background: #222;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.box2 form h2 {
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.box2 form .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 20px; /* Adjust margin-top as needed */
+}
+
+.box2 form .inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 15px 10px;
+  background: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 8;
+}
+
+.box2 form .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 15px 0px;
+  pointer-events: none;
+  color: #8f8f8f;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  transition: 0.5s;
+}
+
+.box2 form .inputBox input:valid ~ span,
+.box2 form .inputBox input:focus ~ span {
+  color: #45f3ff;
+  font-size: 0.75em;
+  transform: translateY(-24px); /* Adjust translateY as needed */
+}
+
+.box2 form .inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #45f3ff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.box2 form .inputBox input:valid ~ i,
+.box2 form .inputBox input:focus ~ i {
+  height: 45px; /* Adjust height as needed */
+}
+
+.box2 form input[type="submit"] {
+  border: none;
+  outline: none;
+  padding: 9px 25px;
+  background: #45f3ff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.box2 form input[type="submit"]:active {
+  opacity: 0.8;
+}
+
+.box2 form .inputBox input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #45f3ff; /* Dropdown arrow background color */
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  border: none;
+  cursor: pointer;
+}

@@ -2,46 +2,39 @@ const Header = () => {
   return (
     <>
       <header className="hide-when-mobile">
-        <h1  ><a href="/" className="myfonte">PaPi Education</a></h1>
+        <h1>
+          <a href="/home" className="myfonte">
+            PaPi Education
+          </a>
+        </h1>
         <ul className="flex">
           <li className="main-list">
-            <a className="main-link" href="#">
-              HTML
+            <a className="main-link" href="/home">
+              home
             </a>
-            <ul className="sub-ul">
-              <li>
-                <a href="">Full Course</a>
-              </li>
-              <li>
-                <a href="">Crash Course</a>
-              </li>
-              <li>
-                <a href="">learn in 1h</a>
-              </li>
-            </ul>
           </li>
           <li className="main-list">
             <a className="main-link" href="#">
-              CSS
+              explore
             </a>
             <ul className="sub-ul">
               <li>
-                <a href="">Full Course</a>
+                <a href="">trending 🔥</a>
               </li>
               <li>
-                <a href="">CSS Examples</a>
+                <a href="">latest 🆕</a>
               </li>
               <li className="mini-projects">
-                <a href="">mini projects&nbsp; + </a>
+                <a href="">my interests&nbsp; + </a>
                 <ul className="sub-sub-ul">
                   <li>
-                    <a href="">project 1</a>
+                    <a href="">interest 1</a>
                   </li>
                   <li>
-                    <a href="">project 2</a>
+                    <a href="">interest 2</a>
                   </li>
                   <li>
-                    <a href="">project 3</a>
+                    <a href="">interest 3</a>
                   </li>
                 </ul>
               </li>
@@ -49,7 +42,71 @@ const Header = () => {
           </li>
           <li className="main-list">
             <a className="main-link" href="#">
-              JavaScript
+              community
+            </a>
+            <ul className="sub-ul sub-of-js">
+              <li>
+                <a href="">coming soon🔥</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li className="main-list">
+            <a className="main-link" href="#">
+              profil
+            </a>
+            <ul className="sub-ul sub-of-js">
+              <li>
+                <a href="/login">Update</a>
+              </li>
+              <li>
+                <a href="">settings ⚙️</a>
+              </li>
+              <li>
+                <a href="">logout 🖐</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <header className="show-when-mobile">
+        <ul className="flex">
+          <li className="main-list">
+            <a className="main-link" href="/home">
+              home
+            </a>
+          </li>
+          <li className="main-list">
+            <a className="main-link" href="#">
+              explore
+            </a>
+            <ul className="sub-ul">
+              <li>
+                <a href="">trending 🔥</a>
+              </li>
+              <li>
+                <a href="">latest </a>
+              </li>
+              <li className="mini-projects">
+                <a href="">my interests&nbsp; + </a>
+                <ul className="sub-sub-ul">
+                  <li>
+                    <a href="">interest 1</a>
+                  </li>
+                  <li>
+                    <a href="">interest 2</a>
+                  </li>
+                  <li>
+                    <a href="">interest 3</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li className="main-list">
+            <a className="main-link" href="#">
+              community
             </a>
             <ul className="sub-ul sub-of-js">
               <li>
@@ -71,74 +128,6 @@ const Header = () => {
             </ul>
           </li>
         </ul>
-      </header>
-      <header className="show-when-mobile">
-        <h1 className="myfont">PaPi education</h1>
-        <label className="absolute" htmlFor="burger">
-          <i className="fas fa-bars" />
-        </label>
-        <input id="burger" type="checkbox" />
-        <div className="show-on-click">
-          <div className="main-div">
-            <label htmlFor="html">
-              HTML <i className="fas fa-plus" />
-            </label>
-            <input id="html" type="checkbox" />
-            <ul className="sub-div">
-              <li>
-                <a href="">Full Course</a>
-              </li>
-              <li>
-                <a href="">Crash Course</a>
-              </li>
-              <li>
-                <a href="">learn in 1h</a>
-              </li>
-            </ul>
-          </div>
-          <div className="main-div">
-            <label htmlFor="css">
-              CSS <i className="fas fa-plus" />
-            </label>
-            <input id="css" type="checkbox" />
-            <ul className="sub-div">
-              <li>
-                <a href="">Full Course</a>
-              </li>
-              <li>
-                <a href="">CSS Examples</a>
-              </li>
-              <li>
-                <label className="mini-projects" htmlFor="mini">
-                  mini projects <i className="fas fa-plus" />
-                </label>
-                <input id="mini" type="checkbox" />
-                <ul className="sub-sub-div">
-                  <li>
-                    <a href="">project 1</a>
-                  </li>
-                  <li>
-                    <a href="">project 2</a>
-                  </li>
-                  <li>
-                    <a href="">project 3</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-            <div className="main-div">
-              <label htmlFor="js">
-                JavaScript <i className="fas fa-plus" />
-              </label>
-              <input id="js" type="checkbox" />
-              <ul className="sub-div">
-                <li>
-                  <a href="">coming soon🔥</a>
-                </li>
-              </ul>
-            </div>
-        </div>
       </header>
     </>
   );
