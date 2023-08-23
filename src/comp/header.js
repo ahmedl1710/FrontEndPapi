@@ -53,18 +53,18 @@ const Header = () => {
         </ul>
         <ul>
           <li className="main-list">
-            <a className="main-link" href="#">
+            <a className="main-link" href="">
               profil
             </a>
             <ul className="sub-ul sub-of-js">
               <li>
-                <a href="/login">Update</a>
+                <a href="">Update</a>
               </li>
               <li>
-                <a href="">settings ⚙️</a>
+                <a href="">Settings ⚙️</a>
               </li>
               <li>
-                <a href="">logout 🖐</a>
+                <a href="">Log out 🖐</a>
               </li>
             </ul>
           </li>

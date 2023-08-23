@@ -498,3 +498,13 @@ letter-spacing: 0.1em;
   border: none;
   cursor: pointer;
 }
+.error-message {
+  color: #45f3ff;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
