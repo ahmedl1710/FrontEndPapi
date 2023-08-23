@@ -1,4 +1,8 @@
 const Header = () => {
+  const handleClearLocalStorage = () => {
+    // Clear all items in localStorage
+    localStorage.clear();
+  };
   return (
     <>
       <header className="hide-when-mobile">
@@ -53,7 +57,7 @@ const Header = () => {
         </ul>
         <ul>
           <li className="main-list">
-            <a className="main-link" href="">
+            <a className="main-link" href="/profil">
               profil
             </a>
             <ul className="sub-ul sub-of-js">
@@ -64,7 +68,7 @@ const Header = () => {
                 <a href="">Settings ⚙️</a>
               </li>
               <li>
-                <a href="">Log out 🖐</a>
+                <a href="/login" onClick={handleClearLocalStorage}>Log out 🖐</a>
               </li>
             </ul>
           </li>
@@ -115,7 +119,7 @@ const Header = () => {
             </ul>
           </li>
           <li className="main-list">
-            <a className="main-link" href="#">
+            <a className="main-link" href="profil">
               access account
             </a>
             <ul className="sub-ul sub-of-js">

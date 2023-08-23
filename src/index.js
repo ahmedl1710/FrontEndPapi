@@ -13,6 +13,9 @@ import Signup from "./pages/signup";
 import About from "./pages/about";
 import Notfound from "./pages/notfound"
 import Homeafterlogin from './pages/homeafterlogin'
+import Profil from './pages/profil'
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Homeafterlogin/>
+  },
+  {
+    path: "/profil",
+    element: <Profil/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
