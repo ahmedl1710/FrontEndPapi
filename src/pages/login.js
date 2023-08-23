@@ -2,11 +2,12 @@ import Headerbelog from "../comp/headerbeflog";
 import Footer from "../comp/footer";
 import { useState } from "react";
 import qs from "qs";
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const usernameLocalSt = localStorage.getItem('username');
   const handleClick = (e) => {
     e.preventDefault();
     const user = { username, password };
@@ -28,18 +29,17 @@ const Login = () => {
           localStorage.setItem("username", username);
           console.log("Logged in");
           window.location.href = "/home";
-        } else {
-          // Display an error message on failure
-          setErrorMessage("Login failed. Please check your credentials.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error logging in:", error);
-      });
+        } 
+        })
+        .catch((error) => {
+          console.error("Error logging in:", error);
+        });
   };
+  if (usernameLocalSt) {
+    return <Navigate to="/profil" />;
+  }
   return (
     <>
-    {errorMessage && <div className="error-message">{errorMessage}</div>}
       <Headerbelog />
       <div className="bud">
         <div className="box">
@@ -80,6 +80,7 @@ const Login = () => {
       </div>
       <Footer />
     </>
+  
   );
 };
 

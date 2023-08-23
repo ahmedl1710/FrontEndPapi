@@ -45,7 +45,7 @@ const Header = () => {
             </ul>
           </li>
           <li className="main-list">
-            <a className="main-link" href="#">
+            <a className="main-link" href="/about">
               community
             </a>
             <ul className="sub-ul sub-of-js">

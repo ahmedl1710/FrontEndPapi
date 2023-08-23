@@ -1,11 +1,30 @@
 import React from "react";
-import Header from "../comp/headerbeflog";
+import Headerbeflog from "../comp/headerbeflog";
 import Footer from "../comp/footer";
+import Header from "../comp/header";
+import  { useEffect, useState } from 'react';
+
 
 const About = () => {
+  const [head, setHead] = useState('');
+
+  useEffect(() => {
+    const usernameLocalSt = localStorage.getItem('username');
+
+    const conditionHeader = () => {
+      if (usernameLocalSt) {
+        setHead('Header');
+      } else {
+        setHead('Headerbeflog');
+      }
+    }
+
+    // Call the conditionHeader function to set the 'head' variable
+    conditionHeader();
+  }, []);
   return (
     <>
-      <Header />
+      {head === 'Header' ? <Header/>: <Headerbeflog/>}
       <section className="testimonials section-padding" id="testimonials">
         <div className="container">
           <div className="row">

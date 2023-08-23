@@ -1,6 +1,7 @@
 import Headerbelog from "../comp/headerbeflog";
 import Footer from "../comp/footer";
 import { useState } from "react";
+import qs from "qs";
 
 const Signup = () => {
   const [name,setName]=useState('')
@@ -22,7 +23,30 @@ const Signup = () => {
     }).then(()=>{
       console.log("new user added");
     
-    })
+    }).then((response)=>{
+        const userlog = { username, password };
+       fetch("http://localhost:8083/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: qs.stringify(userlog),
+      }).then((response) => response.json()) // Assuming the server responds with JSON
+      .then((data) => {
+        if (data.access_token && data.refresh_token) {
+          // Assuming the authentication token is in the 'token' field of the response data
+          const authToken = data.access_token;
+          const refreshToken = data.refresh_token;
+          // Store the authToken in localStorage
+          localStorage.setItem("authToken", authToken);
+          localStorage.setItem("refToken", refreshToken);
+          localStorage.setItem("username", username);
+          console.log("Logged in");
+          window.location.href = "/home";
+        } 
+        })
+        .catch((error) => {
+          console.error("Error logging in:", error);
+        });
+  });
   }
   return (
     <>
@@ -73,6 +97,6 @@ const Signup = () => {
       <Footer />
     </>
   );
-};
 
+  }
 export default Signup;
