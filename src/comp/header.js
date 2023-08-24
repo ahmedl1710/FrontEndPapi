@@ -1,8 +1,15 @@
+
+import { useState } from "react";
+import { request } from "../helpers/axios_helper";
+
+
 const Header = () => {
+
   const handleClearLocalStorage = () => {
     // Clear all items in localStorage
     localStorage.clear();
   };
+
   return (
     <>
       <header className="hide-when-mobile">
@@ -13,7 +20,7 @@ const Header = () => {
         </h1>
         <ul className="flex">
           <li className="main-list">
-            <a className="main-link" href="/home">
+            <a className="main-link" href="/home" >
               home
             </a>
           </li>
@@ -62,7 +69,7 @@ const Header = () => {
             </a>
             <ul className="sub-ul sub-of-js">
               <li>
-                <a href="">Update</a>
+                <a href="/updateProfil">Update</a>
               </li>
               <li>
                 <a href="">Settings ⚙️</a>

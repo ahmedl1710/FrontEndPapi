@@ -1,19 +1,40 @@
-import React from 'react';
-import Header from '../comp/header'
-import Footer from '../comp/footer'
-
-
-
+import React from "react";
+import Header from "../comp/header";
+import Footer from "../comp/footer";
+import Course from "../comp/courseCard";
+import { useState } from "react";
+import { request } from "../helpers/axios_helper";
+import { useEffect } from 'react';
 const Homeafterlogin = () => {
+  const [courses, setCourses] = useState([]);
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    const url = `/course/getAllCourses`;
+    request(
+      "GET",
+      url,
+      {}
+    )
+    .then((res) => {
+      if (res.status === 200) {
+      setCourses(res.data); 
+        console.log(res.data);
+      }
+    });
+  }
+
+  useEffect(() => {
+    handleHomeClick({ preventDefault: () => {} }); // Call handleHomeClick
+  }, []); // Empty dependency array ensures it runs once on component mount
+
+  
   return (
     <>
-      <Header/>
-        <main>
-          <h1 className='myfont-black text-center'>home page</h1>
-        </main>
-      <Footer/>
+      <Header />
+      <Course list={courses}></Course>
+      <Footer />
     </>
   );
-}
+};
 
 export default Homeafterlogin;

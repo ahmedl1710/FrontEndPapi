@@ -14,7 +14,7 @@ import About from "./pages/about";
 import Notfound from "./pages/notfound"
 import Homeafterlogin from './pages/homeafterlogin'
 import Profil from './pages/profil'
-
+import UpdateProfil from './pages/updateProfile'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/profil",
     element: <Profil/>
+  },
+  {
+    path: "/updateProfil",
+    element: <UpdateProfil/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

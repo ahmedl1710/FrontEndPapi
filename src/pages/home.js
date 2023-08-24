@@ -4,6 +4,8 @@
 import Headerbelog from "../comp/headerbeflog";
 import Footer from "../comp/footer";
 const Home = () => {
+
+
   return (
     <>
       <Headerbelog />
@@ -94,7 +96,7 @@ const Home = () => {
                     </p>
                     <p className="card-text">
                       <small className="text-muted">
-                        algorithms will follow you in yoour learning experience to help you improve your self
+                        algorithms will follow you in yoour learning experience to help you improve yourself
                       </small>
                     </p>
                   </div>

@@ -3,6 +3,7 @@ import Footer from "../comp/footer";
 import { useState } from "react";
 import qs from "qs";
 import { Navigate } from 'react-router-dom';
+import { request } from "../helpers/axios_helper";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -28,8 +29,22 @@ const Login = () => {
           localStorage.setItem("refToken", refreshToken);
           localStorage.setItem("username", username);
           console.log("Logged in");
-          window.location.href = "/home";
-        } 
+          
+        }
+        const url = `/user/getUserByUsername/${username}`;
+        request(
+          "GET",
+          url,
+          {username:username}
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            const user = res.data;
+            console.log(JSON.stringify(user));
+            localStorage.setItem("connectedUser", JSON.stringify(user));
+            window.location.href = "/home";
+          }
+        });
         })
         .catch((error) => {
           console.error("Error logging in:", error);
