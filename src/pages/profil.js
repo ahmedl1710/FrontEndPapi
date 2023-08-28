@@ -27,6 +27,14 @@ const Profil = () => {
   return (
     <>
       <Header />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <h1 className="myfont-black text-center">your profile</h1>
       <br />
       <br />
@@ -219,8 +227,11 @@ const Profil = () => {
                 <hr />
                 <div className="row">
                   <div className="col-sm-12">
-                    {user.roles.some((role) => role.name === 'ROLE_SUPER_ADMIN')    ? (
-                      <a className="btn btn-info" target="__blank" href="#">
+                    {/* this is the condition where it depends from the user role  */}
+                    {user.roles.some(
+                      (role) => role.name === "ROLE_SUPER_ADMIN"
+                    ) ? (
+                      <a className="btn btn-info" target="__blank" href="/manage">
                         Manage website
                       </a>
                     ) : (

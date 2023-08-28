@@ -39,9 +39,7 @@ const Login = () => {
         )
         .then((res) => {
           if (res.status === 200) {
-            const user = res.data;
-            console.log(JSON.stringify(user));
-            localStorage.setItem("connectedUser", JSON.stringify(user));
+            localStorage.setItem("connectedUser",JSON.stringify(res.data));
             window.location.href = "/home";
           }
         });

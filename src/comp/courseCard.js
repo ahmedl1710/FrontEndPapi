@@ -1,9 +1,7 @@
 import React from "react";
 
 const CourseCard = (props) => {
-  console.log("this is couses page");
-  console.log(typeof props.list);
-  console.log(props.list);
+  
   return (
     <>
       <link
@@ -16,24 +14,23 @@ const CourseCard = (props) => {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css"
       />
-      <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <div className="popular_courses">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-5">
-            
               <div className="main_title">
-                
-                <h2 className="myfont-black text-center">Our Popular Courses</h2>
+                <h2 className="myfont-black text-center">
+                  {props.title}
+                </h2>
               </div>
             </div>
           </div>
@@ -42,21 +39,22 @@ const CourseCard = (props) => {
               <div className="owl-carousel active_course owl-loaded owl-drag">
                 <div className="owl-stage-outer">
                   <div className="owl-stage">
-                  <br/>
-                <br/>
-                <br/>
-                <br/>
-                
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
                     {props.list.map((course) => (
+                      < div key={course.id}>
                       <div
                         className="owl-item active"
                         style={{ width: 350, marginRight: 20 }}
                       >
-                        <div className="single_course" key={course.id}>
+                        <div className="single_course">
                           <div className="course_head">
                             <img
                               className="img-fluid"
-                              src="images/books1.jpg"
+                              src="/images/books1.jpg"
                               alt=""
                               style={{ height: 350 }}
                             />
@@ -90,15 +88,14 @@ const CourseCard = (props) => {
                                 </span>
                                 <span className="meta_info">
                                   <a href="#">
-                                  
                                     <i className="ti-heart mr-2" />
-                                    
                                   </a>
                                 </span>
                               </div>
                             </div>
                           </div>
                         </div>
+                      </div>
                       </div>
                     ))}
                   </div>

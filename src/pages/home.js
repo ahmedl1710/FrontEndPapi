@@ -13,7 +13,6 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-12">
-              <h3 className="mb-4">This is Ben's Resume</h3>
               <p>
                 PaPI is your ultimate gateway to self-guided learning and career
                 advancement. Our intelligent platform offers a diverse range of

@@ -7,6 +7,7 @@ import { request } from "../helpers/axios_helper";
 import { useEffect } from 'react';
 const Homeafterlogin = () => {
   const [courses, setCourses] = useState([]);
+  const tit="our courses"
   const handleHomeClick = (e) => {
     e.preventDefault();
     const url = `/course/getAllCourses`;
@@ -31,7 +32,7 @@ const Homeafterlogin = () => {
   return (
     <>
       <Header />
-      <Course list={courses}></Course>
+      <Course list={courses} title={tit}></Course>
       <Footer />
     </>
   );

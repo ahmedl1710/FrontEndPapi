@@ -1,15 +1,19 @@
-
 import { useState } from "react";
 import { request } from "../helpers/axios_helper";
 
-
 const Header = () => {
+  const userConnected = localStorage.getItem("connectedUser");
+  const user = JSON.parse(userConnected);
 
   const handleClearLocalStorage = () => {
     // Clear all items in localStorage
     localStorage.clear();
   };
-
+  const [selectedInterest, setSelectedInterest] = useState(null);
+  const handleInterestClick = (interestName) => {
+    setSelectedInterest(JSON.stringify(interestName));
+  };
+  console.log(selectedInterest);
   return (
     <>
       <header className="hide-when-mobile">
@@ -20,7 +24,7 @@ const Header = () => {
         </h1>
         <ul className="flex">
           <li className="main-list">
-            <a className="main-link" href="/home" >
+            <a className="main-link" href="/home">
               home
             </a>
           </li>
@@ -36,17 +40,18 @@ const Header = () => {
                 <a href="">latest 🆕</a>
               </li>
               <li className="mini-projects">
-                <a href="">my interests&nbsp; + </a>
+                <a href="">My interests </a>
                 <ul className="sub-sub-ul">
-                  <li>
-                    <a href="">interest 1</a>
-                  </li>
-                  <li>
-                    <a href="">interest 2</a>
-                  </li>
-                  <li>
-                    <a href="">interest 3</a>
-                  </li>
+                  {user.interests.map((interest) => (
+                    <li key={interest.id} >
+                      <a
+                        href={`/interests/${selectedInterest}`}
+                        onClick={() => handleInterestClick(interest.name) }
+                      >
+                        {interest.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </li>
             </ul>
@@ -75,7 +80,9 @@ const Header = () => {
                 <a href="">Settings ⚙️</a>
               </li>
               <li>
-                <a href="/login" onClick={handleClearLocalStorage}>Log out 🖐</a>
+                <a href="/login" onClick={handleClearLocalStorage}>
+                  Log out 🖐
+                </a>
               </li>
             </ul>
           </li>

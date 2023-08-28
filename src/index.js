@@ -15,6 +15,8 @@ import Notfound from "./pages/notfound"
 import Homeafterlogin from './pages/homeafterlogin'
 import Profil from './pages/profil'
 import UpdateProfil from './pages/updateProfile'
+import CoursesInterest from './pages/coursesInterest';
+import Management from './pages/management';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
   {
     path: "/updateProfil",
     element: <UpdateProfil/>
+  },
+  {
+    path: "/interests/:selectedInterest",
+    element: <CoursesInterest/>
+  },
+  {
+    path: "/manage",
+    element: <Management/>
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
