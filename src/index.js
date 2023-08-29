@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -17,6 +16,10 @@ import Profil from './pages/profil'
 import UpdateProfil from './pages/updateProfile'
 import CoursesInterest from './pages/coursesInterest';
 import Management from './pages/management';
+import Trendingcourses from './pages/trendingcourses';
+import Sidebar from './pages/Dashboard/sidebar';
+import Users from './pages/Dashboard/users';
+import Courses from './pages/Dashboard/courses';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +59,23 @@ const router = createBrowserRouter([
     path: "/manage",
     element: <Management/>
   },
+  {
+    path: "/trendyCourses",
+    element: <Trendingcourses/>
+  },
+  {
+    path: "/dashboard",
+    element: <Sidebar/>
+  },
+  {
+    path: "/users",
+    element: <Users/>
+  },
+  {
+    path: "/courses",
+    element: <Courses/>
+  },
+
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

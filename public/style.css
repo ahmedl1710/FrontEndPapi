@@ -837,3 +837,88 @@ body{margin-top:20px;}
 .mb-33{
   font-size: 13px;
 }
+
+ /* YourTable.css */
+
+/* Center the table horizontally and vertically on the page */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust to your desired height */
+  background-color: white; /* Set your background color */
+}
+
+/* Style the table */
+.custom-table {
+  border-collapse: collapse;
+  width: 90%; /* Adjust to your desired table width */
+  max-width: 120px; /* Set a maximum width if needed */
+  text-align: left;
+  font-family: Arial, sans-serif;
+  margin: 0 auto; /* Center the table within its container */
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ddd; /* Set border color */
+  padding: 30px; /* Increase cell padding */
+  font-size: 15px; /* Decrease font size */
+  font-weight: normal; /* Remove bold font weight */
+  color: black; /* Set text color to black */
+}
+
+.custom-table th {
+  background-color: #f2f2f2; /* Header background color */
+  text-align: center;
+  
+}
+/* Add pagination styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.pagination-link {
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: #000;
+}
+
+.pagination-link:hover {
+  background-color: #f2f2f2;
+}
+
+.pagination-active {
+  background-color: #1bced4;
+  color: rgb(0, 0, 0);
+}
+
+.pagination-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.trash-icon {
+  color: black;
+}
+.myfonte3{
+  font-family:FetteGotisch;
+  font-size: 20px;
+
+}
+.myfonte3:hover {
+  color: cyan;
+  box-shadow: 0 0 5px cyan;
+  border-radius: 5px;
+}

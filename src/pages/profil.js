@@ -231,7 +231,7 @@ const Profil = () => {
                     {user.roles.some(
                       (role) => role.name === "ROLE_SUPER_ADMIN"
                     ) ? (
-                      <a className="btn btn-info" target="__blank" href="/manage">
+                      <a className="btn btn-info" target="_blank" href="/dashboard">
                         Manage website
                       </a>
                     ) : (

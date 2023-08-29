@@ -34,7 +34,7 @@ const Header = () => {
             </a>
             <ul className="sub-ul">
               <li>
-                <a href="">trending 🔥</a>
+                <a href="/trendyCourses">trending 🔥</a>
               </li>
               <li>
                 <a href="">latest 🆕</a>

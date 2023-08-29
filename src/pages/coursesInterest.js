@@ -19,7 +19,9 @@ const CoursesInterest = () => {
       url,
       {}
     )
+    
     .then((res) => {
+      
       if (res.status === 200) {
         setCoursesInterest(res.data); 
         console.log(res.data);

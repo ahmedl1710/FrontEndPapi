@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@tanstack/react-table": "^8.9.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
     "buffer": "^6.0.3",
     "classnames": "^2.3.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.7.0",
     "jsonwebtoken": "^9.0.1",
     "jwt-decode": "^3.1.2",
@@ -17,7 +22,10 @@
     "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
+    "react-data-table-component": "^7.5.4",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-paginate": "^8.2.0",
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
@@ -46,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
   }
 }
