@@ -9,6 +9,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const usernameLocalSt = localStorage.getItem('username');
+  
   const handleClick = (e) => {
     e.preventDefault();
     const user = { username, password };

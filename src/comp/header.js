@@ -40,7 +40,7 @@ const Header = () => {
                 <a href="">latest 🆕</a>
               </li>
               <li className="mini-projects">
-                <a href="">My interests </a>
+                My interests 
                 <ul className="sub-sub-ul">
                   {user.interests.map((interest) => (
                     <li key={interest.id} >

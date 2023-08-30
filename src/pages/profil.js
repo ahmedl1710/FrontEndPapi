@@ -63,6 +63,18 @@ const Profil = () => {
                     <p className="text-muted font-size-sm">
                       Bay Area, San Francisco, CA
                     </p>
+                    {user.roles.some((role) => role.name === "ROLE_MANAGER") ? (
+                      <a
+                        className="btn btn-warning"
+                        target="_blank"
+                        href="/coursemanager"
+                      >
+                        Manage Courses
+                      </a>
+                    ) : (
+                      <p>This button is not available for your role.</p>
+                    )}
+                    <br/><br/>
                     <a
                       className="main-link2"
                       href="/login"
@@ -231,7 +243,11 @@ const Profil = () => {
                     {user.roles.some(
                       (role) => role.name === "ROLE_SUPER_ADMIN"
                     ) ? (
-                      <a className="btn btn-info" target="_blank" href="/dashboard">
+                      <a
+                        className="btn btn-info"
+                        target="_blank"
+                        href="/dashboard"
+                      >
                         Manage website
                       </a>
                     ) : (

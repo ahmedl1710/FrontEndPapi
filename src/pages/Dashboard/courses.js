@@ -11,7 +11,7 @@ const Courses = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const coursesPerPage = 5;
   const [courses, setCourses] = useState([]);
-  const handleUsersClick = (e) => {
+  const handleCoursetClick = (e) => {
     e.preventDefault();
     const url = `/course/getAllCourses`;
     request("GET", url, {}).then((res) => {
@@ -34,7 +34,7 @@ const Courses = () => {
 
   const handleDeleteUser = (courseId) => {
     console.log(courseId)
-    const url = `/interest/delInterest/${courseId}`;
+    const url = `/course/deleteCourse/${courseId}`;
     request("DELETE", url, {id:courseId}).then((res) => {
       if (res.status === 200) {
         console.log(res.data)
@@ -44,12 +44,12 @@ const Courses = () => {
   };
   
   useEffect(() => {
-    handleUsersClick({ preventDefault: () => {} }); // Call handleHomeClick
+    handleCoursetClick({ preventDefault: () => {} }); // Call handleHomeClick
   }, []);
   console.log(courses)
   const indexOfLastCourse = (currentPage + 1) * coursesPerPage;
-  const indexOfFirstUser = indexOfLastCourse - coursesPerPage;
-  const currentCourses = courses.slice(indexOfFirstUser, indexOfLastCourse);
+  const indexOfFirstInterest = indexOfLastCourse - coursesPerPage;
+  const currentCourses = courses.slice(indexOfFirstInterest, indexOfLastCourse);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
@@ -57,13 +57,11 @@ const Courses = () => {
 
   return (
     <>
-      <section className="flex gap-6">
+      <section className="flex gap-6 ">
         <Sidebar />
-        <div className="m-3 text-xl text-gray-900 font-semibold">
+        <div className="m-3 text-xl text-gray-900 font-semibold ">
           <h3 className="myfont-black text-center">Courses</h3>
-          <br />
-          <br />
-          <br />
+          
           <div className="table-container">
             <table className="custom-table">
               <thead>
@@ -106,8 +104,7 @@ const Courses = () => {
               </tbody>
             </table>
           </div>
-          <br />
-          <br />
+        
           <div className="pagination-container">
             <ReactPaginate
               previousLabel={"Previous"}

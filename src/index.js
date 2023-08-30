@@ -20,6 +20,9 @@ import Trendingcourses from './pages/trendingcourses';
 import Sidebar from './pages/Dashboard/sidebar';
 import Users from './pages/Dashboard/users';
 import Courses from './pages/Dashboard/courses';
+import Interests from './pages/Dashboard/interests';
+import Roles from './pages/Dashboard/roles';
+import Managecourses from './pages/managecourses';
 
 const router = createBrowserRouter([
   {
@@ -75,7 +78,18 @@ const router = createBrowserRouter([
     path: "/courses",
     element: <Courses/>
   },
-
+  {
+    path: "/interests",
+    element: <Interests/>
+  },
+  {
+    path: "/roles",
+    element: <Roles/>
+  },
+  {
+    path: "/coursemanager",
+    element: <Managecourses/>
+  },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

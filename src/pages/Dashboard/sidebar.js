@@ -6,6 +6,7 @@ import { RiSettings4Line } from "react-icons/ri";
 import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
 import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
+import { FaChess } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -13,8 +14,10 @@ const Sidebar = () => {
 
 
   const menus = [
-    { name: "dashboard", link: "/", icon: TbReportAnalytics },
+    { name: "dashboard", link: "#", icon: TbReportAnalytics },
+    
     { name: "users", link: "/users", icon: AiOutlineUser },
+    { name: "roles", link: "/roles", icon: FaChess },
     { name: "Courses", link: "/courses", icon: MdOutlineDashboard },
     { name: "Interests", link: "/interests", icon: AiOutlineHeart },
     { name: "File Manager", link: "/", icon: FiFolder },
@@ -26,7 +29,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`bg-[#0e0e0e] min-h-screen ${
+        className={`bg-[#0e0e0e] ${
           open ? "w-72" : "w-16"
         } duration-500 text-gray-100 px-4`}
       >
