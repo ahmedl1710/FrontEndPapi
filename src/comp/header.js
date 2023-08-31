@@ -13,7 +13,6 @@ const Header = () => {
   const handleInterestClick = (interestName) => {
     setSelectedInterest(JSON.stringify(interestName));
   };
-  console.log(selectedInterest);
   return (
     <>
       <header className="hide-when-mobile">

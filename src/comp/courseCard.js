@@ -14,15 +14,7 @@ const CourseCard = (props) => {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css"
       />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
+      
       <div className="popular_courses">
         <div className="container">
           <div className="row justify-content-center">

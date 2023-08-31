@@ -1,8 +1,47 @@
 import React from "react";
 import Header from "../comp/header";
 import Footer from "../comp/footer";
+import CourseCard from "../comp/courseCard";
+import { useState } from "react";
+import { request } from "../helpers/axios_helper";
+import { useEffect } from "react";
+import { GiBlackBook } from "react-icons/gi";
 
 const Managecourses = () => {
+  const [showCourses, setShowCourses] = useState(false);
+  const username = localStorage.getItem("username");
+  const [courses, setCourses] = useState([]);
+  const tit = "";
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    const url = `/course/getUserCourses/${username}`;
+    request("GET", url, {}).then((res) => {
+      if (res.status === 200) {
+        setCourses(res.data);
+      }
+    });
+  };
+
+  const renderCourseOptions = () => {
+    return(<div className="list-group list-group-flush" role="tablist">
+    { courses.map((course) => (
+      <a
+        className="list-group-item list-group-item-action mb-0"
+        data-toggle="list"
+        href="#password"
+        role="tab"
+        key={course.id}
+      >
+        {"------> " +course.title}
+      </a>
+    ))}
+    </div>)
+  };
+
+  useEffect(() => {
+    handleHomeClick({ preventDefault: () => {} }); // Call handleHomeClick
+  }, []); // Empty dependency array ensures it runs once on component mount
+
   return (
     <>
       <Header />
@@ -24,24 +63,26 @@ const Managecourses = () => {
             <div className="col-md-5 col-xl-4">
               <div className="mancard">
                 <div className="mancard-header">
-                  <h5 className="card-title mb-0">Profile Settings</h5>
+                  <h5 className="card-title mb-0">Courses manager</h5>
                 </div>
                 <div className="list-group list-group-flush" role="tablist">
                   <a
-                    className="list-group-item list-group-item-action active"
+                    className="list-group-item list-group-item-action"
                     data-toggle="list"
-                    href="#account"
                     role="tab"
+                    onClick={() => setShowCourses(!showCourses)}
                   >
-                    Account
+                    My courses
+                    
                   </a>
+                  {showCourses && renderCourseOptions()}
                   <a
                     className="list-group-item list-group-item-action"
                     data-toggle="list"
-                    href="#password"
+                    href="password"
                     role="tab"
                   >
-                    Password
+                    add new course
                   </a>
                   <a
                     className="list-group-item list-group-item-action"
@@ -49,7 +90,7 @@ const Managecourses = () => {
                     href="#"
                     role="tab"
                   >
-                    Privacy and safety
+                    Contact students
                   </a>
                   <a
                     className="list-group-item list-group-item-action"
@@ -59,38 +100,7 @@ const Managecourses = () => {
                   >
                     Email notifications
                   </a>
-                  <a
-                    className="list-group-item list-group-item-action"
-                    data-toggle="list"
-                    href="#"
-                    role="tab"
-                  >
-                    Web notifications
-                  </a>
-                  <a
-                    className="list-group-item list-group-item-action"
-                    data-toggle="list"
-                    href="#"
-                    role="tab"
-                  >
-                    Widgets
-                  </a>
-                  <a
-                    className="list-group-item list-group-item-action"
-                    data-toggle="list"
-                    href="#"
-                    role="tab"
-                  >
-                    Your data
-                  </a>
-                  <a
-                    className="list-group-item list-group-item-action"
-                    data-toggle="list"
-                    href="#"
-                    role="tab"
-                  >
-                    Delete account
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -103,123 +113,10 @@ const Managecourses = () => {
                 >
                   <div className="mancard">
                     <div className="mancard-header">
-                      <div className="card-actions float-right">
-                        <div className="dropdown show">
-                          <a
-                            href="#"
-                            data-toggle="dropdown"
-                            data-display="static"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width={24}
-                              height={24}
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="feather feather-more-horizontal align-middle"
-                            >
-                              <circle cx={12} cy={12} r={1} />
-                              <circle cx={19} cy={12} r={1} />
-                              <circle cx={5} cy={12} r={1} />
-                            </svg>
-                          </a>
-                          <div className="dropdown-menu dropdown-menu-right">
-                            <a className="dropdown-item" href="#">
-                              Action
-                            </a>
-                            <a className="dropdown-item" href="#">
-                              Another action
-                            </a>
-                            <a className="dropdown-item" href="#">
-                              Something else here
-                            </a>
-                          </div>
-                        </div>
-                      </div>
                       <h5 className="card-title mb-0">Private info</h5>
                     </div>
                     <div className="card-body">
-                      <form>
-                        <div className="form-row">
-                          <div className="form-group col-md-6">
-                            <label htmlFor="inputFirstName">First name</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="inputFirstName"
-                              placeholder="First name"
-                            />
-                          </div>
-                          <div className="form-group col-md-6">
-                            <label htmlFor="inputLastName">Last name</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="inputLastName"
-                              placeholder="Last name"
-                            />
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="inputEmail4">Email</label>
-                          <input
-                            type="email"
-                            className="form-control"
-                            id="inputEmail4"
-                            placeholder="Email"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="inputAddress">Address</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="inputAddress"
-                            placeholder="1234 Main St"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="inputAddress2">Address 2</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="inputAddress2"
-                            placeholder="Apartment, studio, or floor"
-                          />
-                        </div>
-                        <div className="form-row">
-                          <div className="form-group col-md-6">
-                            <label htmlFor="inputCity">City</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="inputCity"
-                            />
-                          </div>
-                          <div className="form-group col-md-4">
-                            <label htmlFor="inputState">State</label>
-                            <select id="inputState" className="form-control">
-                              <option selected="">Choose...</option>
-                              <option>...</option>
-                            </select>
-                          </div>
-                          <div className="form-group col-md-2">
-                            <label htmlFor="inputZip">Zip</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="inputZip"
-                            />
-                          </div>
-                        </div>
-                        <button type="submit" className="btn btn-primary">
-                          Save changes
-                        </button>
-                      </form>
+                      <CourseCard list={courses} title={tit} />
                     </div>
                   </div>
                 </div>
